@@ -1,8 +1,8 @@
-/* ── NAVBAR ── */
+/* ── navigation bar ── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 28), { passive: true });
 
-/* ── ACTIVE NAV ── */
+/* ── active navigation bar ── */
 const allSec = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
   let cur = '';
@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-/* ── HAMBURGER ── */
+/* ── hamburger menu ── */
 const ham = document.getElementById('ham');
 const mob = document.getElementById('mobnav');
 const mclose = document.getElementById('mobclose');
@@ -20,7 +20,7 @@ ham.addEventListener('click', () => mob.classList.toggle('open'));
 mclose.addEventListener('click', () => mob.classList.remove('open'));
 document.querySelectorAll('.m-lnk').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
 
-/* ── PARTICLES ── */
+/* ── particles ── */
 const pContainer = document.getElementById('particles');
 const positions = [
   [12, 18], [24, 62], [38, 35], [55, 80], [67, 22], [80, 54], [91, 38], [47, 15],
@@ -34,7 +34,7 @@ positions.forEach(([l, t]) => {
   pContainer.appendChild(p);
 });
 
-/* ── TYPING ── */
+/* ── the line which is being typed ── */
 const phrases = [
   'Lorem ipsum dolor, amet consectetur',
   'Lorem ipsum dolor, consectetur',
@@ -54,14 +54,14 @@ function type() {
 }
 setTimeout(type, 1000);
 
-/* ── REVEAL ── */
+/* ── revel of object by .rv ── */
 const rvs = document.querySelectorAll('.rv');
 const rvo = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vi'); rvo.unobserve(e.target); } });
 }, { threshold: 0.08 });
 rvs.forEach(el => rvo.observe(el));
 
-/* ── CONTACT ── */
+/* ── contact section ── */
 function sendMsg() {
   const n = document.getElementById('fn').value.trim();
   const e = document.getElementById('fe').value.trim();
